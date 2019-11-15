@@ -158,7 +158,6 @@
 	padding: 0;
 }
 	</style>
-	<link rel="stylesheet" href="css/style1.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -174,30 +173,10 @@ require_once("./left.php")
 <div class="main">
 	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/barbie_bn.gif" id="images">
 	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/three-bn-22.jpg" id="images">
-	<img src="images/4.gif" class="item1">
+	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/adan_season13.gif" class="item1">
 	<br>
-	<img src="images/5.gif" class="item2">
-	<img src="images/6.gif" class="item2">
+	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/two-banner/a/4.jpg" class="item2">
+	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/two-banner/a/5.jpg" class="item2">
 	<br>
-
-<div class="product-group-title">
-		<?php 
-		$sql = "Select * from product";
-		$pros = query($sql);
-		for($i=0; $i<count($pros); $i++)
-		{
-			?>
-
-			<div class="product">
-				<div class="image">
-					<a href="./productdetail.php?pid=<?=$pros[$i][0]?>">
-						<img src="<?=$pros[$i][2]?>" alt="" width= "300px" height="500px" >
-					</a>
-				</div>
-			</div>
-			<?php
-		}
-		?>
-		</div>
 </body>
 </html>
