@@ -1,7 +1,4 @@
 <div class="header">
-			<i class="fa fa-times" id="close-btn" onclick="closemenu()"></i>
-			<input type="text" class="form-control">
-			<span class="input-group-text"><i class="fa fa-search"></i></span>
 </div>
 <div class="menu">
 	<ul>
