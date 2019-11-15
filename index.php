@@ -172,8 +172,8 @@ require_once("./header.php");
 require_once("./left.php")
  ?>
 <div class="main">
-	<img src="images/2.gif" class="item1">
-	<img src="images/3.gif" class="item1">
+	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/barbie_bn.gif" class="item1">
+	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/three-bn-22.jpg" class="item1">
 	<img src="images/4.gif" class="item1">
 	<br>
 	<img src="images/5.gif" class="item2">
