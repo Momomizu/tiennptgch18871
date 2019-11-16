@@ -21,7 +21,7 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 	
-	$sql = "SELECT  id, name, price FROM Product";
+	$sql = "SELECT  id, name, image, price FROM Product";
 	$stmt = $pdo->prepare($sql);
 	
 	$stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -34,7 +34,7 @@ $pdo = new PDO("pgsql:" . sprintf(
 			foreach ($resultSet as $row)
 			{
 				echo"<li>" .
-					$row["id"] . '--' . $row["name"]. '--'. $row["price"]. "</li>";
+					$row["id"] . '--' . $row["name"]. '--'. $row["image"] . '--' . $row["price"]. "</li>";
 			}
 		?>
 	</ul>
