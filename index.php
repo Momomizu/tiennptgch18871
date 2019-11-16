@@ -115,6 +115,23 @@
 	background-color: #F8CFCF;
 	color: #454593;
 }
+.main{
+	width: 70%;
+	float: left;
+	height: auto;
+}
+.item1{
+	height: 500px;
+	width: 32%;
+	margin: 0.5%;
+	float: left;
+}
+.item2{
+	height: 600px;
+	width: 49%;
+	margin: 0.5%;
+	float: left;
+}
 .product{
 	height: 150px;
 	width: 20%;
@@ -148,7 +165,8 @@
 </head>
 <body>
 	
-<?php
+<?php 
+ ?>
 <div class="header">
 <div class="menu">
 	<ul>
@@ -158,6 +176,6 @@
 </div>
 
 	<img src="https://www.chuu.co.kr/images/main/banners/top-area/main-banner/b/7.jpg" class="content">
-	?>
+
 </body>
 </html>
