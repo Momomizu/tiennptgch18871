@@ -12,9 +12,7 @@
 	<?php
 echo "Show all rows from Postgres Database";
 
-//Refer to database
 $db = parse_url(getenv("DATABASE_URL"));
-
 $pdo = new PDO("pgsql:" . sprintf(
     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
     $db["host"],
@@ -23,25 +21,24 @@ $pdo = new PDO("pgsql:" . sprintf(
     $db["pass"],
     ltrim($db["path"], "/")
 ));
-//your sql query
-$sql = "SELECT productid, productname, price FROM ProductList";
-
-$stmt = $pdo -> prepare($sql);
-
-//execute the query on the server and return the result set
-$stmt -> setFetchMode (PFO::FETCH_ASSOC);
-$stmt -> execute();
-$resultSet = $stmt -> fetchAll();
-
-//display the data
-?>
-<ul>
-	<?php
-		foreach ($resultSet as $row) {
-			echo "<li>" . $row["productid"] . '--' . $row["productname"] . '--' . $row["price"] . "</li>";
-		}
-	?>
-</ul>
+	
+	$sql = "SELECT  productid, productname, price FROM Product";
+	$stmt = $pdo->prepare($sql);
+	//execute the query on the server and return the result set
+	$stmt->setFetchMode(PDO::FETCH_ASSOC);
+	$stmt->execute();
+	$resultSet = $stmt->fetchAll();
+	
+?> 
+	<ul>
+		<?php
+			foreach ($resultSet as $row)
+			{
+				echo"<li>" .
+					$row["productid"] . '--'. $row["productname"]. '--'. $row["price"]. "</li>";
+			}
+		?>
+	</ul>
 		<a href="./addproduct.php">Add New Product</a>
 		</div>
 </body>
