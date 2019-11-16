@@ -39,6 +39,7 @@ $pdo = new PDO("pgsql:" . sprintf(
 		?>
 	</ul>
 		<a href="./addproduct.php">Add New Product</a>
+		<a href="./delete.php">Delete</a>
 		</div>
 </body>
 </html>
