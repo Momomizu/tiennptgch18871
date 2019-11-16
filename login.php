@@ -3,24 +3,22 @@
 <head>
 	<title>Treasure You</title>
 	<meta charset="UTF-8">
-	<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  	<script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-  crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" type="text/css" href="/style.css">
 </head>
+
 <body>
 	<?php
 	require_once("./header.php");
 	?>
 		<div>
 			<h1>Login</h1>
+			<form border = "1px" action="admin.php" method="POST">
 			<input type="text" name="admin" placeholder="Username">
 			<input type="password" name="admin" placeholder="Password">
 			<input type="submit" value="Login">
+		</form>
 		</div>
 </body>
 </html>
