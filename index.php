@@ -115,23 +115,6 @@
 	background-color: #F8CFCF;
 	color: #454593;
 }
-.main{
-	width: 70%;
-	float: left;
-	height: auto;
-}
-.item1{
-	height: 500px;
-	width: 32%;
-	margin: 0.5%;
-	float: left;
-}
-.item2{
-	height: 600px;
-	width: 49%;
-	margin: 0.5%;
-	float: left;
-}
 .product{
 	height: 150px;
 	width: 20%;
@@ -165,9 +148,7 @@
 </head>
 <body>
 	
-<?php 
-require_once("./header.php");
- ?>
+<?php
 <div class="header">
 <div class="menu">
 	<ul>
@@ -177,13 +158,6 @@ require_once("./header.php");
 </div>
 
 	<img src="https://www.chuu.co.kr/images/main/banners/top-area/main-banner/b/7.jpg" class="content">
-<div class="main">
-	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/barbie_bn.gif" id="images">
-	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/three-bn-22.jpg" id="images">
-	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/adan_season13.gif" class="item1">
-	<br>
-	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/two-banner/a/4.jpg" class="item2">
-	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/two-banner/a/5.jpg" class="item2">
-	<br>
+	?>
 </body>
 </html>
