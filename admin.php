@@ -9,42 +9,39 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<?php 
-	require_once("./db.php");
-	require_once("./header.php");
-	require_once("./left.php")
-	?>
-		<div class="second"></div>	
-		<div class="product">
-			<table border="1" cellspacing="0">
-				<tr>
-					<th>Product ID</th>
-					<th>Product Name</th>
-					<th>Image</th>
-					<th>Price</th>
-					<th>Category ID</th>
-					<th>Action</th>
-				</tr>
-		<?php 
-		$sql = "Select * from product";
-		$pros = query($sql);
-		for($i=0; $i<count($pros); $i++)
-		{
-			?>
-				<tr>
-					<td><?=$pros[$i][0]?></td>
-					<td><?=$pros[$i][1]?></td>
-					<td><?=$pros[$i][2]?></td>
-					<td><?=$pros[$i][3]?></td>
-					<td><?=$pros[$i][4]?></td>
-					<td><a href="">Edit</a>
-						<a href="">Delete</a>
-					</td>
-				</tr>
-			<?php
+	<?php
+echo "Show all rows from Postgres Database";
+
+//Refer to database
+$db = parse_url(getenv("DATABASE_URL"));
+
+$pdo = new PDO("pgsql:" . sprintf(
+    "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+    $db["host"],
+    $db["port"],
+    $db["user"],
+    $db["pass"],
+    ltrim($db["path"], "/")
+));
+//your sql query
+$sql = "SELECT productid, productname, price FROM ProductList";
+
+$stmt = $pdo -> prepare($sql);
+
+//execute the query on the server and return the result set
+$stmt -> setFetchMode (PFO::FETCH_ASSOC);
+$stmt -> execute();
+$resultSet = $stmt -> fetchAll();
+
+//display the data
+?>
+<ul>
+	<?php
+		foreach ($resultSet as $row) {
+			echo "<li>" . $row["productid"] . '--' . $row["productname"] . '--' . $row["price"] . "</li>";
 		}
-		?>
-			</table>
+	?>
+</ul>
 		<a href="./addproduct.php">Add New Product</a>
 		</div>
 </body>
