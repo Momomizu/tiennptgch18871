@@ -10,8 +10,6 @@
 </head>
 <body>
 	<?php
-echo "Show all rows from Postgres Database";
-
 $db = parse_url(getenv("DATABASE_URL"));
 $pdo = new PDO("pgsql:" . sprintf(
     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
@@ -24,7 +22,7 @@ $pdo = new PDO("pgsql:" . sprintf(
 	
 	$sql = "SELECT  id, name, price FROM Product";
 	$stmt = $pdo->prepare($sql);
-	//execute the query on the server and return the result set
+	
 	$stmt->setFetchMode(PDO::FETCH_ASSOC);
 	$stmt->execute();
 	$resultSet = $stmt->fetchAll();
