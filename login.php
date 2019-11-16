@@ -10,8 +10,8 @@
 
 <body>
 	<?php
-	require_once("./header.php");
 	?>
+	<img src="https://www.chuu.co.kr/images/main/banners/top-area/main-banner/b/7.jpg" class="content">
 		<div>
 			<h1>Login</h1>
 			<form border = "1px" action="admin.php" method="POST">
