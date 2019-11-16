@@ -13,6 +13,11 @@
 	<form method = "post" action = "admin.php">
 		<table>
 			<tr>
+				<td>ID</td>
+				<td><input type = "text" name= "txtName"></td>
+			
+			<tr>
+			<tr>
 				<td>Name</td>
 				<td><input type = "text" name= "txtName"></td>
 			
@@ -23,7 +28,7 @@
 			
 			<tr>
 				<td></td>
-				<td><input type = "submit" name = "Submit"></td>
+				<td><input type = "submit" name = "Submit" value = "Sent"></td>
 			</tr>
 		</table>
 	</form>
