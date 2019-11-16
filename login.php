@@ -20,6 +20,7 @@
 			<h1>Login</h1>
 			<input type="text" name="admin" placeholder="Username">
 			<input type="password" name="admin" placeholder="Password">
+			<input type="submit" value="Login">
 		</div>
 </body>
 </html>
