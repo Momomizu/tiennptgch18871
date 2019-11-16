@@ -167,8 +167,16 @@
 	
 <?php 
 require_once("./header.php");
-require_once("./left.php")
  ?>
+<div class="header">
+<div class="menu">
+	<ul>
+		<li><a href="login.php">Log in</a></li>
+	</ul>	
+</div>
+</div>
+
+	<img src="https://www.chuu.co.kr/images/main/banners/top-area/main-banner/b/7.jpg" class="content">
 <div class="main">
 	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/barbie_bn.gif" id="images">
 	<img src="https://www.chuu.co.kr/images/main/banners/top-area/sub-banner/three-banner/three-bn-22.jpg" id="images">
