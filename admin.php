@@ -29,7 +29,12 @@ $pdo = new PDO("pgsql:" . sprintf(
 	$resultSet = $stmt->fetchAll();
 	
 ?> 
-	<ul>
+		<table border="1" cellspacing="0">
+				<tr>
+					<th>Product ID</th>
+					<th>Product Name</th>
+					<th>Price</th>
+				</tr>
 		<?php
 			$sql = "Select * from Product";
 		$pros = query($sql);
@@ -40,8 +45,6 @@ $pdo = new PDO("pgsql:" . sprintf(
 					<td><?=$pros[$i][0]?></td>
 					<td><?=$pros[$i][1]?></td>
 					<td><?=$pros[$i][2]?></td>
-					<td><?=$pros[$i][3]?></td>
-					<td><?=$pros[$i][4]?></td>
 					<td><a href="">Edit</a>
 						<a href="">Delete</a>
 					</td>
@@ -49,7 +52,6 @@ $pdo = new PDO("pgsql:" . sprintf(
 			<?php
 		}
 		?>
-	</ul>
 		<a href="./addproduct.php">Add New Product</a>
 		<a href="./delete.php">Delete</a>
 		</div>
