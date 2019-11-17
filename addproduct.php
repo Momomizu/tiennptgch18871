@@ -10,16 +10,58 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form method = "post" action = "admin.php">
+	<?php 
+		require("dbconnect.php");
+		if(isset($_POST["submit"]))
+		{
+			$id = $_POST["id"];
+			$name = $_POST["name"];
+			$price = $_POST["price"];
+
+			if ($id == "" || $name == "" || $price == "")
+			{
+				?>
+				<script>
+					alert("Product data should not be blank!!!");
+				</script>
+				<?php
+			}
+			else
+			{
+				$sql = "select * from product where name = '$name'";
+				$query = pg_query($conn, $sql);
+				if(pg_num_rows($query)>0)
+				{
+					?>
+					<script>
+						alert("The product is added");
+					</script>
+					<?php 
+				}
+				else
+				{
+					$sql = "INSERT INTO Product(id, name, price) VALUES ('$id', '$name', '$price')";
+					pg_query($conn, $sql);
+					?>
+					<script>
+						alert("Added");
+						window.location.href = "/admin.php";
+					</script>
+					<?php
+				}
+			}
+		}
+	?>
+	<form method = "post" action = "add.php">
 		<table>
 			<tr>
 				<td>ID</td>
-				<td><input type = "text" name= "txtName"></td>
+				<td><input type = "text" name= "txtid"></td>
 			
 			<tr>
 			<tr>
 				<td>Name</td>
-				<td><input type = "text" name= "txtName"></td>
+				<td><input type = "text" name= "txtname"></td>
 			
 			<tr>
 				<td>Price</td>
@@ -28,7 +70,7 @@
 			
 			<tr>
 				<td></td>
-				<td><input type = "submit" name = "Submit" value = "Sent"></td>
+				<td><input type = "submit" name = "Submit" value = "Add"></td>
 			</tr>
 		</table>
 	</form>
