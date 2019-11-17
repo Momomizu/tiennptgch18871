@@ -29,30 +29,6 @@ $pdo = new PDO("pgsql:" . sprintf(
 	$resultSet = $stmt->fetchAll();
 	
 ?> 
-	<table border="1" cellspacing="0">
-				<tr>
-					<th>Product ID</th>
-					<th>Product Name</th>
-					<th>Price</th>
-				</tr>
-				<?php 
-		$sql = "Select * from product";
-		$pros = query($sql);
-		for($i=0; $i<count($pros); $i++)
-		{
-			?>
-				<tr>
-					<td><?=$pros[$i][0]?></td>
-					<td><?=$pros[$i][1]?></td>
-					<td><?=$pros[$i][2]?></td>
-					<td><a href="">Edit</a>
-						<a href="">Delete</a>
-					</td>
-				</tr>
-			<?php
-		}
-		?>
-			</table>
 	<ul>
 		<?php
 			foreach ($resultSet as $row)
