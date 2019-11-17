@@ -52,7 +52,7 @@
 			}
 		}
 	?>
-	<form method = "post" action = "add.php">
+	<form method = "post" action = "addproduct.php" enctype="multipart/form-data">
 		<table>
 			<tr>
 				<td>ID</td>
