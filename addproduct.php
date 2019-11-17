@@ -45,7 +45,7 @@
 					?>
 					<script>
 						alert("Added");
-						window.location.href = "admin.php";
+						window.location.href = "/admin.php";
 					</script>
 					<?php
 				}
