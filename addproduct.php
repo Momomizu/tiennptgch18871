@@ -45,7 +45,7 @@
 					?>
 					<script>
 						alert("Added");
-						window.location.href = "/admin.php";
+						window.location.href = "admin.php";
 					</script>
 					<?php
 				}
@@ -56,21 +56,21 @@
 		<table>
 			<tr>
 				<td>ID</td>
-				<td><input type = "text" name= "txtid"></td>
+				<td><input type = "text" name= "id"></td>
 			
 			<tr>
 			<tr>
 				<td>Name</td>
-				<td><input type = "text" name= "txtname"></td>
+				<td><input type = "text" name= "name"></td>
 			
 			<tr>
 				<td>Price</td>
-				<td><input type = "text" name = "txtprice"/></td>
+				<td><input type = "text" name = "price"/></td>
 			</tr>
 			
 			<tr>
 				<td></td>
-				<td><input type = "submit" name = "Submit" value = "Add"></td>
+				<td><input type = "submit" name = "submit" value = "Add"></td>
 			</tr>
 		</table>
 	</form>
