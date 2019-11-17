@@ -29,29 +29,21 @@ $pdo = new PDO("pgsql:" . sprintf(
 	$resultSet = $stmt->fetchAll();
 	
 ?> 
-		<table border="1" cellspacing="0">
+	<table border="1" cellspacing="0">
 				<tr>
 					<th>Product ID</th>
 					<th>Product Name</th>
 					<th>Price</th>
 				</tr>
+	<ul>
 		<?php
-			$sql = "Select * from Product";
-		$pros = query($sql);
-		for($i=0; $i<count($pros); $i++)
-		{
-			?>
-				<tr>
-					<td><?=$pros[$i][0]?></td>
-					<td><?=$pros[$i][1]?></td>
-					<td><?=$pros[$i][2]?></td>
-					<td><a href="">Edit</a>
-						<a href="">Delete</a>
-					</td>
-				</tr>
-			<?php
-		}
+			foreach ($resultSet as $row)
+			{
+				echo"<li>" .
+					$row["id"] . '--' . $row["name"]. '--'. $row["price"]. "</li>";
+			}
 		?>
+	</ul>
 		<a href="./addproduct.php">Add New Product</a>
 		<a href="./delete.php">Delete</a>
 		</div>
